@@ -1,26 +1,38 @@
 #!/usr/bin/env python3
 
-
-from gittui.ascii_art import banner
-from gittui.prompts import main_main
+from gittui.ascii_art import load_banner
+from gittui.prompts import ask_action
+from gittui.init_repo import init_repo
 from rich.console import Console
 
 console = Console()
 
 
 def run():
-    console.print(banner(), style="bold cyan")
+    # Startup banner
+    console.print(load_banner("welcome"), style="bold cyan")
 
     while True:
-        choice = main_main()
+        choice = ask_action()
 
         if choice == "Quit" or choice is None:
-            console.print("Goodbye! :()", style="bold green")
+            console.print("Goodbye! :(", style="bold green")
             break
         else:
-            console.print(f"You selected: {choice}", style="yellow")
-            # git operations go here
+            # Action banner for the chosen operation
+            banner_file = ""
+            if choice == "Initialize new repository":
+                banner_file = "init_repo"
+                init_repo()
+            elif choice == "Clone a repository":
+                banner_file = "clone_repo"
+                # call clone function here
+            elif choice == "Open existing repository":
+                banner_file = "open_repo"
+                # call open repo function here
+            elif choice == "Git Configuration":
+                banner_file = "config"
+                # call config function here
 
-
-if __name__ == "__main__":
-    run()
+            if banner_file:
+                console.print(load_banner(banner_file), style="bold magenta")

@@ -1,7 +1,7 @@
 import questionary
 
 
-def main_main():
+def ask_action():
     return questionary.select(
         "Choose an action:",
         choices=[
