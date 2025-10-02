@@ -13,7 +13,9 @@ def init_repo():
     console.print(load_banner("init_repo"), style="bold magenta")
 
     # Select directory
-    use_current = questionary.confirm("Initialize repo in current directory?").ask()
+    use_current = questionary.confirm(
+        "Initialize repository in current directory?"
+    ).ask()
     if use_current:
         repo_path = Path.cwd()
     else:
