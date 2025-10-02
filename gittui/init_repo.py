@@ -1,4 +1,3 @@
-# gittui/init_repo.py
 import subprocess
 from pathlib import Path
 import questionary
@@ -10,7 +9,9 @@ console = Console()
 
 
 def init_repo():
+    # Banner for init only
     console.print(load_banner("init_repo"), style="bold magenta")
+
     # Select directory
     use_current = questionary.confirm("Initialize repo in current directory?").ask()
     if use_current:
@@ -26,35 +27,26 @@ def init_repo():
 
     commands = []
 
-    # git init
     commands.append(("git init", "Initializes a local Git repository"))
 
-    # Add all files?
-    add_files = questionary.confirm("Add all files to initial commit?").ask()
-    if add_files:
+    if questionary.confirm("Add all files to initial commit?").ask():
         commands.append(("git add .", "Adds all files and directories to staging"))
 
-    # Initial commit?
-    do_commit = questionary.confirm("Create initial commit?").ask()
-    if do_commit:
+    if questionary.confirm("Create initial commit?").ask():
         commit_msg = questionary.text(
             "Enter commit message:", default="Initial commit"
         ).ask()
         commands.append((f'git commit -m "{commit_msg}"', "Commits staged changes"))
 
-    # Show commands summary
     panel_content = "\n".join([f"{cmd} → {desc}" for cmd, desc in commands])
     console.print(
         Panel(panel_content, title="Commands that are going to run", expand=False)
     )
 
-    # Final confirmation
-    proceed = questionary.confirm("Run these commands?").ask()
-    if not proceed:
+    if not questionary.confirm("Run these commands?").ask():
         console.print("[yellow]Aborted by user[/yellow]")
         return
 
-    # Run commands
     for cmd, _ in commands:
         console.print(f"[green]Running:[/green] {cmd}")
         subprocess.run(cmd, shell=True, cwd=repo_path)

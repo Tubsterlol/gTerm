@@ -18,21 +18,12 @@ def run():
         if choice == "Quit" or choice is None:
             console.print("Goodbye! :(", style="bold green")
             break
-        else:
-            # Action banner for the chosen operation
-            banner_file = ""
-            if choice == "Initialize new repository":
-                banner_file = "init_repo"
-                init_repo()
-            elif choice == "Clone a repository":
-                banner_file = "clone_repo"
-                # call clone function here
-            elif choice == "Open existing repository":
-                banner_file = "open_repo"
-                # call open repo function here
-            elif choice == "Git Configuration":
-                banner_file = "config"
-                # call config function here
-
-            if banner_file:
-                console.print(load_banner(banner_file), style="bold magenta")
+        elif choice == "Initialize new repository":
+            init_repo()
+        elif choice == "Clone a repository":
+            # later implement clone_repo()
+            console.print(load_banner("clone_repo"), style="bold magenta")
+        elif choice == "Open existing repository":
+            console.print(load_banner("open_repo"), style="bold magenta")
+        elif choice == "Git Configuration":
+            console.print(load_banner("config"), style="bold magenta")
