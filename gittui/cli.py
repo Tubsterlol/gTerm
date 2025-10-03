@@ -2,8 +2,8 @@
 
 from gittui.ascii_art import load_banner
 from gittui.prompts import ask_action
-from gittui.init_repo import init_repo
-from gittui.clone_repo import clone_repo
+from .modules.init_repo import init_repo
+from .modules.clone_repo import clone_repo
 from rich.console import Console
 
 console = Console()
