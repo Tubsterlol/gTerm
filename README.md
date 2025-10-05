@@ -17,14 +17,17 @@
 </div>
 
 
-# 🧠 gTerm — A Command-Line Git Assistant
+# • gTerm — A Command-Line Git Assistant
 
-**gTerm** is a **terminal-based utility** designed to simplify common Git operations through a clean, menu-driven interface.  
-It aims to make repository management, commits, branching, and cloning **faster, safer, and more intuitive** — while staying entirely within the terminal.
+**gTerm** is a **terminal-based tool** that makes working with Git easier and more intuitive.
+It offers a clean, menu-driven interface to help you manage everyday Git tasks — like **committing changes, switching branches, and cloning repositories** — without needing to remember complex commands.
+
+Whether you're a beginner or a seasoned developer, gTerm keeps your workflow fast, safe, and efficient — all from the comfort of your terminal.
+And whether you're on Linux or Windows, gTerm works anywhere.
 
 ---
 
-## 📘 Why I’m Building This
+## • Why I’m Building This
 
 I wanted a **fast, minimal Git assistant** that feels like a native part of the terminal —  
 something that doesn’t rely on bloated GUIs, but also avoids typing repetitive Git commands manually.
@@ -35,20 +38,20 @@ It’s open-source, transparent, and portable — so anyone can tweak it, improv
 
 ---
 
-## ⚙️ How It’s Made
+## • How It’s Made
 
 - **Language:** Python 3  
 - **Libraries:**  
   - [`rich`](https://pypi.org/project/rich/) — for console output  
   - [`questionary`](https://pypi.org/project/questionary/) — for interactive prompts  
 - **Structure:**  
-  Each Git operation is modular — `clone_repo.py`, `branch_manager.py`, `commit_existing_repo.py`, etc.  
+  Each Git operation is modular — `clone_repo.py`, `branch_manager.py`, `init_repo.py`, etc.  
   This makes it easy to extend or maintain the tool.  
 - **OS Support:** Works on **Linux** and **Windows (PowerShell)**.
 
 ---
 
-## 🧩 Features
+## • Features
 
 - Initialize or clone repositories easily  
 - Open and inspect existing repos  
@@ -61,7 +64,7 @@ It’s open-source, transparent, and portable — so anyone can tweak it, improv
 
 ---
 
-## 🧰 Installation
+## • Installation
 
 <details>
 <summary>🐧 Linux </summary>
@@ -134,23 +137,37 @@ C:\Users\<username>\AppData\Roaming\Python\Python311\Scripts
 
 ---
 
-## 🧭 Using gTerm
+## • Using gTerm
+
+Just type "**gterm**" in your terminal to run.
 
 Once running, **gTerm** provides a simple, menu-driven interface for all major Git operations:
 
-### Main Menu Options
+### • Main Menu Options
 
 - **Initialize New Repository** — Create a fresh Git repository in a selected directory.  
 - **Clone Repository** — Clone any remote repository using its URL.  
 - **Open Existing Repository** — Work inside an existing local repository.  
-- **Recent Repositories** — Quickly access your recently used repositories.  
+- **Recent Repositories** — Quickly access your recently used repositories.
 - **Branch Manager** — Create, switch, delete, or list branches.  
-- **Commit History Viewer** — Browse and inspect previous commits.  
-- **Stash Manager** — Save your current work or restore stashed changes.  
-- **Remote Manager** — Add, remove, or view remote repositories.  
-- **Status Dashboard** — View the current repository status at a glance.  
-- **Change Git Configuration** — Update your global `user.name` or `user.email`.  
-- **Switch Config Profile** — Toggle between different Git configuration profiles.  
+- **Commit History Viewer** — Browse and inspect previous commits.**(WIP)**
+- **Stash Manager** — Save your current work or restore stashed changes.**(WIP)**
+- **Remote Manager** — Add, remove, or view remote repositories.**(WIP)**
+- **Status Dashboard** — View the current repository status at a glance.**(WIP)**  
+- **Change Git Configuration** — Update your global `user.name` or `user.email`.**(WIP)**  
+- **Switch Config Profile** — Toggle between different Git configuration profiles.**(WIP)**
 - **gTerm Manual** — View this in-terminal help and reference menu.
 
 Each option is interactive — you’ll be prompted for confirmation before any Git command runs, ensuring a safe and transparent workflow.
+
+---
+<details>
+  <summary><strong>• Previews</strong></summary>
+
+  ![Menu](previews/1-screenshot.png)
+  ![Init](previews/2-screenshot.png)
+  ![Clone](previews/3-screenshot.png)
+  ![OpenExisting](previews/4-screenshot.png)
+  ![Branch](previews/5-screenshot.png)
+
+</details>
