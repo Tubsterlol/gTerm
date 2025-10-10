@@ -43,7 +43,7 @@ def branch_manager():
                 "git branch --all", shell=True, text=True, capture_output=True
             )
             branches = [b.strip() for b in result.stdout.splitlines() if b.strip()]
-            branches = [b.replace("* ", "") for b in branches]  # remove marker
+            branches = [b.replace("* ", "") for b in branches]
             if not branches:
                 console.print("[red]No branches found.[/red]")
                 continue
