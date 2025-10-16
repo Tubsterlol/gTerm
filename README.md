@@ -1,3 +1,5 @@
+# gTerm — Terminal-Based Git Assistant
+
 <div align="center">
 
 <pre>
@@ -16,117 +18,113 @@
 </pre>
 </div>
 
+gTerm is a professional, open-source terminal user interface (TUI) for Git, designed to make version control intuitive, fast, and accessible from any Linux terminal. Inspired by tools like btop, gTerm offers a menu-driven experience for everyday Git operations, eliminating the need to memorize complex commands.
+gterm
 
-# • gTerm — A Command-Line Git Assistant
+# gTerm — Terminal-Based Git Assistant
 
-**gTerm** is a **terminal-based tool** that makes working with Git easier and more intuitive.
-It offers a clean, menu-driven interface to help you manage everyday Git tasks — like **committing changes, switching branches, and cloning repositories** — without needing to remember complex commands.
-
-Whether you're a beginner or a seasoned developer, gTerm keeps your workflow fast, safe, and efficient — all from the comfort of your terminal.
-And whether you're on Linux or Windows, gTerm works anywhere.
+gTerm is a professional, open-source terminal user interface (TUI) for Git, designed to make version control intuitive, fast, and accessible from any terminal. Inspired by tools like btop, gTerm offers a menu-driven experience for everyday Git operations, eliminating the need to memorize complex commands.
 
 ---
 
-## • Why I’m Building This
+## Overview
 
-I wanted a **fast, minimal Git assistant** that feels like a native part of the terminal —  
-something that doesn’t rely on bloated GUIs, but also avoids typing repetitive Git commands manually.
+gTerm simplifies Git workflows with an interactive interface built using [questionary](https://pypi.org/project/questionary/) and [rich](https://pypi.org/project/rich/). It is designed exclusively for Linux, and is suitable for both beginners and advanced users.
 
-This project is about striking a balance:  
-a tool that helps **learn Git concepts** while still being practical enough to use every day.  
-It’s open-source, transparent, and portable — so anyone can tweak it, improve it, or just use it to save time.
-
----
-
-## • How It’s Made
-
-- **Language:** Python 3  
-- **Libraries:**  
-  - [`rich`](https://pypi.org/project/rich/) — for console output  
-  - [`questionary`](https://pypi.org/project/questionary/) — for interactive prompts  
-- **Structure:**  
-  Each Git operation is modular — `clone_repo.py`, `branch_manager.py`, `init_repo.py`, etc.  
-  This makes it easy to extend or maintain the tool.  
-- **OS Support:** Works on **Linux** and **Windows (PowerShell)**.
+Key features include:
+- Modular architecture: Each Git operation is implemented in a dedicated Python module (e.g., `clone_repo.py`, `branch_manager.py`, `commit_existing_repo.py`, `commit_history.py`, `config_set.py`, etc.).
+- Utility modules: `utils.py` for terminal clearing and `ascii_art.py` for displaying ASCII banners.
+- Interactive, menu-driven interface for all major Git tasks.
+- Two release versions: a precompiled non-editable binary and a fully open-source version for customization.
 
 ---
 
-## • Features
+## Features
 
-- Initialize or clone repositories easily  
-- Open and inspect existing repos  
-- Manage branches (create, switch, delete, list)  
-- Commit changes to existing repositories  
-- Stash and restore work  
-- Change Git configuration or switch profiles  
-- Clean terminal after every action for a smooth TUI experience  
-- Built-in help manual for quick command reference  
+- **Clone repositories** interactively
+- **Initialize new repositories**
+- **Open and inspect existing repositories**
+- **Branch management**: create, switch, delete, and list branches
+- **Commit changes** with guided prompts
+- **View commit history** in a readable format
+- **Configure Git settings** (user name, email, profiles)
+- **Stash and restore work** (WIP)
+- **Remote management** (WIP)
+- **Status dashboard** (WIP)
+- **Built-in help/manual**
+- **Terminal cleaning** after every action for a smooth TUI experience
 
 ---
 
-## • Installation
 
-<details>
-<summary>🐧 Linux </summary>
-
-### Prerequisites
-Make sure you have **Python 3.9+** and **Git** installed:
-
+### Linux Installation
 ```bash
 sudo apt update
 sudo apt install python3 python3-pip git -y
-```
-### Clone the repository
-```bash
 git clone https://github.com/Tubsterlol/gTerm.git
 cd gTerm
+pip requirements.txt
 ```
-
-### Install Python Dependencies
+### Running gTerm
+After installation, launch gTerm from your terminal:
 ```bash
-pip install -r requirements.txt
-```
-
-### Make gTerm globally accessible
-```bash 
-pip install --user -e .
 gterm
 ```
-</details>
+
+## Usage
+
+gTerm provides a menu-driven interface for all major Git operations. Simply type `gterm` in your terminal and follow the interactive prompts.
+
+### Main Menu Options
+- Initialize New Repository
+- Clone Repository
+- Open Existing Repository
+- Recent Repositories
+- Branch Manager
+- Commit History Viewer
+- Stash Manager (WIP)
+- Remote Manager (WIP)
+- Status Dashboard (WIP)
+- Change Git Configuration (WIP)
+- Switch Config Profile (WIP)
+- gTerm Manual
+
+Each action is confirmed interactively, ensuring safe and transparent Git operations.
 
 ---
 
-## • Using gTerm
+## Development Philosophy
 
-Just type "**gterm**" in your terminal to run.
 
-Once running, **gTerm** provides a simple, menu-driven interface for all major Git operations:
+gTerm is built to be:
+- **Terminal-first**: No GUI dependencies, fast startup, and native terminal feel
+- **Modular**: Each Git operation is a separate Python file for easy extension
+- **Open-source**: Transparent, hackable, and community-driven
+- **Linux-only**: Designed and tested exclusively for Linux
+- **Intuitive**: Designed for both learning and productivity
 
-### • Main Menu Options
-
-- **Initialize New Repository** — Create a fresh Git repository in a selected directory.  
-- **Clone Repository** — Clone any remote repository using its URL.  
-- **Open Existing Repository** — Work inside an existing local repository.  
-- **Recent Repositories** — Quickly access your recently used repositories.
-- **Branch Manager** — Create, switch, delete, or list branches.  
-- **Commit History Viewer** — Browse and inspect previous commits.**(WIP)**
-- **Stash Manager** — Save your current work or restore stashed changes.**(WIP)**
-- **Remote Manager** — Add, remove, or view remote repositories.**(WIP)**
-- **Status Dashboard** — View the current repository status at a glance.**(WIP)**  
-- **Change Git Configuration** — Update your global `user.name` or `user.email`.**(WIP)**  
-- **Switch Config Profile** — Toggle between different Git configuration profiles.**(WIP)**
-- **gTerm Manual** — View this in-terminal help and reference menu.
-
-Each option is interactive — you’ll be prompted for confirmation before any Git command runs, ensuring a safe and transparent workflow.
+Two versions are available:
+- **Precompiled release**: For users who want a ready-to-run binary (non-editable)
+- **Open-source version**: For those who wish to modify, extend, or contribute
 
 ---
+
+## License
+
+gTerm is released under the MIT License. See [LICENSE](LICENSE) for details.
+
+---
+
+## Screenshots
+
 <details>
   <summary><strong>Previews</strong></summary>
-
+  
   ![Menu](previews/1-screenshot.png)
   ![Init](previews/2-screenshot.png)
   ![Clone](previews/3-screenshot.png)
   ![OpenExisting](previews/4-screenshot.png)
   ![Branch](previews/5-screenshot.png)
-
 </details>
+
+---
