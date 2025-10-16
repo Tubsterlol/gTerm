@@ -1,6 +1,6 @@
+import questionary
 from rich.console import Console
 from rich.panel import Panel
-import questionary
 
 from .modules.init_repo import init_repo as init_repo_util
 from .modules.clone_repo import clone_repo as clone_repo_util
@@ -21,6 +21,7 @@ def ask_action():
         choice = questionary.select(
             "Select an option:",
             choices=[
+                "────────────────────────────────────",
                 "[1] Initialize new repository",
                 "[2] Clone repository",
                 "[3] Open existing repository",
