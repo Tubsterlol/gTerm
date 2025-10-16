@@ -94,47 +94,6 @@ gterm
 ```
 </details>
 
-<details>
-<summary>🪟 Windows Installation (PowerShell)</summary>
-
-# Prerequisites
-Make sure you have **Python 3.9+** and **Git** installed:
-
-```powershell
-sudo apt update
-sudo apt install python3 python3-pip git -y
-```
-
-### Clone the repository
-```powershell
-git clone https://github.com/Tubsterlol/gTerm.git
-cd gTerm
-```
-
-### Install Dependencies
-```powershell
-pip install -r requirements.txt
-```
-
-### Install gTerm
-```powershell
-pip install --user -e .
-```
-### Run gTerm
-```powershell
-gterm
-```
-
-### Optional: Add gTerm to PATH(if command not found)
-<ol>
-<li>Open System Properties → Environment Variables</li>
-<li>Under User variables, edit the Path variable</li>
-<li>Add this (replace username):</li>
-C:\Users\<username>\AppData\Roaming\Python\Python311\Scripts
-<li>Open a new Powershell window and try again</li>
-</ol>
-</details>
-
 ---
 
 ## • Using gTerm
@@ -162,7 +121,7 @@ Each option is interactive — you’ll be prompted for confirmation before any 
 
 ---
 <details>
-  <summary><strong>• Previews</strong></summary>
+  <summary><strong>Previews</strong></summary>
 
   ![Menu](previews/1-screenshot.png)
   ![Init](previews/2-screenshot.png)
